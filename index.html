@@ -1,151 +1,246 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy – Men's G</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #f5f5f5;
-            color: #333;
-            line-height: 1.7;
-        }
-        header {
-            background: #3D5A3E;
-            color: #F5F0E8;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2rem;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-        header p {
-            color: #C8B89A;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 32px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-left: 4px solid #3D5A3E;
-        }
-        h2 {
-            color: #3D5A3E;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        p { margin-bottom: 10px; }
-        ul {
-            padding-left: 20px;
-            margin-top: 8px;
-        }
-        ul li { margin-bottom: 6px; }
-        a { color: #3D5A3E; }
-        .badge {
-            display: inline-block;
-            background: #3D5A3E;
-            color: #F5F0E8;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 16px;
-        }
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #999;
-            font-size: 0.85rem;
-        }
-    </style>
-</head>
-<body>
+<title>MensGuide Privacy</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #f5f5f5;
+        color: #333;
+        line-height: 1.7;
+    }
+    header {
+        background: #3D5A3E;
+        color: #F5F0E8;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+    header p {
+        color: #C8B89A;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .card {
+        background: white;
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border-left: 4px solid #3D5A3E;
+    }
+    h2 {
+        color: #3D5A3E;
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    p { margin-bottom: 10px; }
+    ul {
+        padding-left: 20px;
+        margin-top: 8px;
+    }
+    ul li { margin-bottom: 6px; }
+    a { color: #3D5A3E; }
+    .badge {
+        display: inline-block;
+        background: #3D5A3E;
+        color: #F5F0E8;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin-bottom: 16px;
+    }
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        color: #999;
+        font-size: 0.85rem;
+    }
+    .toggle {
+        margin-top: 18px;
+        display: inline-flex;
+        background: rgba(245,240,232,0.15);
+        border: 1px solid rgba(245,240,232,0.4);
+        border-radius: 20px;
+        padding: 3px;
+        gap: 2px;
+    }
+    .toggle button {
+        font-family: inherit;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        border: none;
+        background: transparent;
+        color: #F5F0E8;
+        padding: 6px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    .toggle button[aria-pressed="true"] {
+        background: #F5F0E8;
+        color: #3D5A3E;
+    }
+    [hidden] { display: none !important; }
+</style>
 
 <header>
-    <h1>Men's G</h1>
+    <h1>MEN'S GUIDE</h1>
     <p>PRIVACY POLICY</p>
+    <div class="toggle" role="group" aria-label="Lingua / Language">
+        <button id="btn-it" type="button" aria-pressed="true" onclick="setLang('it')">ITALIANO</button>
+        <button id="btn-en" type="button" aria-pressed="false" onclick="setLang('en')">ENGLISH</button>
+    </div>
 </header>
 
 <div class="container">
 
-    <div class="card">
-        <span class="badge">Ultimo aggiornamento: 30 aprile 2026</span>
-        <h2>Introduzione</h2>
-        <p>Men's G è un'applicazione Android progettata per aiutare gli uomini a comprendere le fasi del ciclo mestruale della propria partner. La privacy degli utenti è una priorità assoluta.</p>
-        <p>Questa Privacy Policy descrive quali dati vengono trattati e come.</p>
+    <div id="lang-it">
+        <div class="card">
+            <span class="badge">Ultimo aggiornamento: 22 settembre 2026</span>
+            <h2>Introduzione</h2>
+            <p>MEN'S GUIDE è un'applicazione Android progettata per aiutare gli uomini a comprendere le fasi del ciclo mestruale della propria partner. La privacy degli utenti è una priorità assoluta.</p>
+            <p>Questa Privacy Policy descrive quali dati vengono trattati e come.</p>
+        </div>
+
+        <div class="card">
+            <h2>1. Dati raccolti</h2>
+            <p>MEN'S GUIDE <strong>non raccoglie, non trasmette e non condivide dati personali</strong> degli utenti. Tutti i dati inseriti dall'utente sono salvati esclusivamente sul dispositivo tramite SharedPreferences e non vengono mai inviati a server esterni:</p>
+            <ul>
+                <li>Data di inizio ciclo</li>
+                <li>Durata del ciclo</li>
+                <li>Nome della città per il meteo</li>
+                <li>Lingua dell'app (italiano/inglese)</li>
+                <li>Marcatori personali (i giorni segnati con cuoricino o luna)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>2. Servizio Meteo</h2>
+            <p>L'app utilizza il servizio <strong>OpenWeatherMap</strong> (<a href="https://openweathermap.org">openweathermap.org</a>) per mostrare la temperatura della città inserita dall'utente.</p>
+            <p>La richiesta include solo il nome della città e non contiene dati personali identificabili. OpenWeatherMap ha una propria Privacy Policy disponibile su: <a href="https://openweathermap.org/privacy-policy">openweathermap.org/privacy-policy</a></p>
+        </div>
+
+        <div class="card">
+            <h2>3. Notifiche</h2>
+            <p>L'app invia notifiche locali giornaliere generate interamente sul dispositivo. Nessun dato viene trasmesso per l'invio delle notifiche.</p>
+        </div>
+
+        <div class="card">
+            <h2>4. Permessi utilizzati</h2>
+            <ul>
+                <li><strong>INTERNET</strong> — necessario per recuperare i dati meteo</li>
+                <li><strong>POST_NOTIFICATIONS</strong> — necessario per inviare notifiche giornaliere</li>
+                <li><strong>RECEIVE_BOOT_COMPLETED</strong> — necessario per ripristinare le notifiche dopo il riavvio</li>
+                <li><strong>VIBRATE</strong> — necessario per la vibrazione del Panic Button</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>5. Servizi di terze parti</h2>
+            <p>L'app utilizza esclusivamente OpenWeatherMap per i dati meteo. <strong>Nessun SDK di analisi, advertising o tracciamento è presente.</strong></p>
+        </div>
+
+        <div class="card">
+            <h2>6. Minori</h2>
+            <p>L'app non è destinata a minori di 13 anni e non raccoglie consapevolmente dati da minori.</p>
+        </div>
+
+        <div class="card">
+            <h2>7. Modifiche alla Privacy Policy</h2>
+            <p>Eventuali modifiche saranno pubblicate su questa pagina con aggiornamento della data in cima.</p>
+        </div>
+
+        <div class="card">
+            <h2>8. Contatti</h2>
+            <p>Per qualsiasi domanda sulla Privacy Policy contattare:</p>
+            <p><a href="mailto:manuel.zordan@gmail.com">manuel.zordan@gmail.com</a></p>
+        </div>
     </div>
 
-    <div class="card">
-        <h2>1. Dati raccolti</h2>
-        <p>Men's G <strong>non raccoglie, non trasmette e non condivide dati personali</strong> degli utenti. Tutti i dati inseriti dall'utente sono salvati esclusivamente sul dispositivo tramite SharedPreferences e non vengono mai inviati a server esterni:</p>
-        <ul>
-            <li>Data di inizio ciclo</li>
-            <li>Nome della città per il meteo</li>
-        </ul>
-    </div>
+    <div id="lang-en" hidden>
+        <div class="card">
+            <span class="badge">Last updated: September 22, 2026</span>
+            <h2>Introduction</h2>
+            <p>MEN'S GUIDE is an Android app designed to help men understand the phases of their partner's menstrual cycle. User privacy is an absolute priority.</p>
+            <p>This Privacy Policy describes what data is processed and how.</p>
+        </div>
 
-    <div class="card">
-        <h2>2. Servizio Meteo</h2>
-        <p>L'app utilizza il servizio <strong>OpenWeatherMap</strong> (<a href="https://openweathermap.org">openweathermap.org</a>) per mostrare la temperatura della città inserita dall'utente.</p>
-        <p>La richiesta include solo il nome della città e non contiene dati personali identificabili. OpenWeatherMap ha una propria Privacy Policy disponibile su: <a href="https://openweathermap.org/privacy-policy">openweathermap.org/privacy-policy</a></p>
-    </div>
+        <div class="card">
+            <h2>1. Data collected</h2>
+            <p>MEN'S GUIDE <strong>does not collect, transmit, or share personal data</strong> about its users. All data entered by the user is saved exclusively on the device via SharedPreferences and is never sent to external servers:</p>
+            <ul>
+                <li>Cycle start date</li>
+                <li>Cycle length</li>
+                <li>City name for weather</li>
+                <li>App language (Italian/English)</li>
+                <li>Personal markers (days marked with a heart or a moon)</li>
+            </ul>
+        </div>
 
-    <div class="card">
-        <h2>3. Notifiche</h2>
-        <p>L'app invia notifiche locali giornaliere generate interamente sul dispositivo. Nessun dato viene trasmesso per l'invio delle notifiche.</p>
-    </div>
+        <div class="card">
+            <h2>2. Weather service</h2>
+            <p>The app uses the <strong>OpenWeatherMap</strong> service (<a href="https://openweathermap.org">openweathermap.org</a>) to display the temperature for the city entered by the user.</p>
+            <p>The request includes only the city name and contains no personally identifiable data. OpenWeatherMap has its own Privacy Policy available at: <a href="https://openweathermap.org/privacy-policy">openweathermap.org/privacy-policy</a></p>
+        </div>
 
-    <div class="card">
-        <h2>4. Permessi utilizzati</h2>
-        <ul>
-            <li><strong>INTERNET</strong> — necessario per recuperare i dati meteo</li>
-            <li><strong>POST_NOTIFICATIONS</strong> — necessario per inviare notifiche giornaliere</li>
-            <li><strong>RECEIVE_BOOT_COMPLETED</strong> — necessario per ripristinare le notifiche dopo il riavvio</li>
-            <li><strong>VIBRATE</strong> — necessario per la vibrazione del Panic Button</li>
-            <li><strong>SCHEDULE_EXACT_ALARM</strong> — necessario per programmare le notifiche all'orario esatto</li>
-            <li><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong> — necessario per garantire la ricezione delle notifiche in background</li>
-        </ul>
-    </div>
+        <div class="card">
+            <h2>3. Notifications</h2>
+            <p>The app sends daily local notifications generated entirely on the device. No data is transmitted to send notifications.</p>
+        </div>
 
-    <div class="card">
-        <h2>5. Servizi di terze parti</h2>
-        <p>L'app utilizza esclusivamente OpenWeatherMap per i dati meteo. <strong>Nessun SDK di analisi, advertising o tracciamento è presente.</strong></p>
-    </div>
+        <div class="card">
+            <h2>4. Permissions used</h2>
+            <ul>
+                <li><strong>INTERNET</strong> — needed to retrieve weather data</li>
+                <li><strong>POST_NOTIFICATIONS</strong> — needed to send daily notifications</li>
+                <li><strong>RECEIVE_BOOT_COMPLETED</strong> — needed to restore notifications after a reboot</li>
+                <li><strong>VIBRATE</strong> — needed for the Panic Button's vibration</li>
+            </ul>
+        </div>
 
-    <div class="card">
-        <h2>6. Minori</h2>
-        <p>L'app non è destinata a minori di 13 anni e non raccoglie consapevolmente dati da minori.</p>
-    </div>
+        <div class="card">
+            <h2>5. Third-party services</h2>
+            <p>The app uses only OpenWeatherMap for weather data. <strong>No analytics, advertising, or tracking SDK is present.</strong></p>
+        </div>
 
-    <div class="card">
-        <h2>7. Modifiche alla Privacy Policy</h2>
-        <p>Eventuali modifiche saranno pubblicate su questa pagina con aggiornamento della data in cima.</p>
-    </div>
+        <div class="card">
+            <h2>6. Children</h2>
+            <p>The app is not directed at children under 13 and does not knowingly collect data from children.</p>
+        </div>
 
-    <div class="card">
-        <h2>8. Contatti</h2>
-        <p>Per qualsiasi domanda sulla Privacy Policy contattare:</p>
-        <p><a href="mailto:manuel.zordan@gmail.com">manuel.zordan@gmail.com</a></p>
+        <div class="card">
+            <h2>7. Changes to this Privacy Policy</h2>
+            <p>Any changes will be published on this page along with an updated date at the top.</p>
+        </div>
+
+        <div class="card">
+            <h2>8. Contact</h2>
+            <p>For any question about this Privacy Policy, contact:</p>
+            <p><a href="mailto:manuel.zordan@gmail.com">manuel.zordan@gmail.com</a></p>
+        </div>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 Men's G — Tutti i diritti riservati</p>
+    <p>© 2026 MEN'S GUIDE — Tutti i diritti riservati / All rights reserved</p>
 </footer>
 
-</body>
-</html>
+<script>
+    function setLang(lang) {
+        var it = lang === 'it';
+        document.getElementById('lang-it').hidden = !it;
+        document.getElementById('lang-en').hidden = it;
+        document.getElementById('btn-it').setAttribute('aria-pressed', String(it));
+        document.getElementById('btn-en').setAttribute('aria-pressed', String(!it));
+    }
+</script>
